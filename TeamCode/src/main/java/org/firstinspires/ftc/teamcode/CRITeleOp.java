@@ -12,11 +12,19 @@ import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
 @TeleOp
 public class CRITeleOp extends LinearOpMode {
 
+    DcMotor frontDelivery;
+    DcMotor rearDelivery;
+    DcMotor lift;
+
     @Override
     public void runOpMode() throws InterruptedException {
         SampleMecanumDrive drive = new SampleMecanumDrive(hardwareMap);
 
         drive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+        frontDelivery = hardwareMap.dcMotor.get("frontDelivery");
+        rearDelivery = hardwareMap.dcMotor.get("rearDelivery");
+        lift = hardwareMap.dcMotor.get("lift");
 
         waitForStart();
 
