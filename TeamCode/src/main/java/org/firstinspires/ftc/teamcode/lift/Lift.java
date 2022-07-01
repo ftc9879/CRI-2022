@@ -93,15 +93,14 @@ public class Lift {
         if (low || mid || high){
 
             if (low){
-                pivot2.setPosition(pivot2Low);
+                lift.setTargetPosition(outDist-800);
             } else if (mid){
-                pivot2.setPosition(pivot2Mid);
+                lift.setTargetPosition(outDist-400);
             } else if (high){
-                pivot2.setPosition(pivot2High);
+                lift.setTargetPosition(outDist);
             }
 
-            lift.setTargetPosition(outDist);
-            pivot1.setPosition(pivot1Forward);
+           // pivot1.setPosition(pivot1Forward);
             goingUp = true;
         } else if (down){
             lift.setTargetPosition(0);
@@ -118,6 +117,8 @@ public class Lift {
 
         if (goingUp && lift.atTargetPosition()){
             lift.stopMotor();
+            pivot1.setPosition(pivot1Forward);
+            pivot2.setPosition(pivot2High);
             scoring.setPosition(scoringOpen);
             goingUp = false;
         }

@@ -20,9 +20,9 @@ public class CRITeleOp extends LinearOpMode {
     public void runOpMode() throws InterruptedException {
         SampleMecanumDrive drive = new SampleMecanumDrive(hardwareMap);
         Delivery delivery = new Delivery(hardwareMap, -1, 1);
-        Lift lift = new Lift(hardwareMap, 1, 1, 3000,
+        Lift lift = new Lift(hardwareMap, 1, 1, 1500,
                 0, 1, 0.03, 0.98, 0.63, 0.73 ,0.83);
-        Intake intake = new Intake(hardwareMap, 1, 0, 1, 1, 0);
+        Intake intake = new Intake(hardwareMap, 0.75, 0.25, 0, 0.25, 0.45, 0.95, 0.35);
         drive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         telemetry.addData("Ready, press start to begin", ":)");
